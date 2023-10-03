@@ -177,6 +177,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.6"
+  dart_ping:
+    dependency: "direct main"
+    description:
+      name: dart_ping
+      sha256: dd3a93d9b986565cb2fadd0c9277cf9880298634ccc9588e353e63c6f736a386
+      url: "https://pub.dev"
+    source: hosted
+    version: "9.0.0"
   dart_style:
     dependency: transitive
     description:
@@ -275,6 +283,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      sha256: "759d1a329847dd0f39226c688d3e06a6b8679668e350e2891a6474f8b4bb8525"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   http_multi_server:
     dependency: transitive
     description:
@@ -387,6 +403,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      sha256: eeb2d1428ee7f4170e2bd498827296a18d4e7fc462b71727d111c0ac7707cfa6
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.1"
   pool:
     dependency: transitive
     description:
@@ -456,6 +480,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
+  speed_test_dart:
+    dependency: "direct main"
+    description:
+      name: speed_test_dart
+      sha256: "4131faa68d5c9259766626450a10e552bc11ff6e651bb6377cc56476443e1cfa"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5+0"
   stack_trace:
     dependency: transitive
     description:
@@ -488,6 +520,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  sync:
+    dependency: transitive
+    description:
+      name: sync
+      sha256: f2ebb89eac969abb02b498562a35c4da63d6843396c4fe81948cd06a76845fce
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0"
   term_glyph:
     dependency: transitive
     description:
@@ -560,6 +600,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.0+2"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      sha256: af5e77e9b83f2f4adc5d3f0a4ece1c7f45a2467b695c2540381bac793e34e556
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.4.2"
   yaml:
     dependency: transitive
     description:

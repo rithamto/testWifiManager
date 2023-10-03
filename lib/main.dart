@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testwificonnect/screen/connectwifi/connectwifi.dart';
+import 'package:testwificonnect/screen/speedtest/speedtest.dart';
 
 void main() => runApp(const MyApp());
 
@@ -29,7 +30,14 @@ class _MyAppState extends State<MyApp> {
                               MaterialPageRoute(
                                   builder: (context) => ConnectWifi.provider()),
                             ),
-                        child: const Text("Connect wifi")),
+                        child: const Text("Scan wifi")),
+                    ElevatedButton(
+                        onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SpeedTest.provider()),
+                            ),
+                        child: const Text("Speed test")),
                   ],
                 );
               }),
