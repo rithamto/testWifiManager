@@ -17,14 +17,12 @@ class SpeedTestCubit extends Cubit<SpeedTestState> {
     final settings = await internetST.getSettings();
     final servers = settings.servers;
     final bestServersList = await internetST.getBestServers(
-        servers: servers,
-      );
-    final down = await internetST.testDownloadSpeed(servers: bestServersList);
-    final up =  await internetST.testUploadSpeed(servers: bestServersList);
+      servers: servers,
+    );
     emit(SpeedTestState.initial(
         data: state.data?.copyWith(
-      downLoadSpeed: down,
-      upLoadSpeed: up,
+      downLoadSpeed: await internetST.testUploadSpeed(servers: bestServersList),
+      upLoadSpeed: await internetST.testUploadSpeed(servers: bestServersList),
     )));
   }
 
@@ -35,6 +33,5 @@ class SpeedTestCubit extends Cubit<SpeedTestState> {
           data: state.data?.copyWith(
               ping: event.response!.time!.inMilliseconds.toString())));
     });
-    // emit(SpeedTestState.initial( data: state.data?.copyWith(ping: ping.summary!.time!.inMilliseconds.toString())));
   }
 }
