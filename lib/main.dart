@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testwificonnect/screen/connectwifi/connectwifi.dart';
 import 'package:testwificonnect/screen/generatepassword/generatepassword.dart';
+import 'package:testwificonnect/screen/signal%20strength/signalstrength.dart';
 import 'package:testwificonnect/screen/speedtest/speedtest.dart';
 
 void main() => runApp(const MyApp());
@@ -43,9 +44,18 @@ class _MyAppState extends State<MyApp> {
                         onPressed: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => GeneratePassword.provider()),
+                                  builder: (context) =>
+                                      GeneratePassword.provider()),
                             ),
                         child: const Text("Generate password")),
+                    ElevatedButton(
+                        onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      SignalStrength.provider()),
+                            ),
+                        child: const Text("Signal Strength")),
                   ],
                 );
               }),
