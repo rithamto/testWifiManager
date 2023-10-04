@@ -22,7 +22,7 @@ class WifiInfoCubit extends Cubit<WifiInfoState> {
     final frequency = await WiFiForIoTPlugin.getFrequency();
     final bssid = await WiFiForIoTPlugin.getBSSID();
     final signalStrength = await WiFiForIoTPlugin.getCurrentSignalStrength();
-    // final status = await WiFiForIoTPlugin.;
+    // final status = await WiFiForIoTPlugin.findAndConnect(ssid);
     // final x = await WiFiForIoTPlugin.
     if (isConnect == true) {
       emit(WifiInfoState.initial(

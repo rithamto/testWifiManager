@@ -44,6 +44,9 @@ dependencies:
   dart_ping: ^9.0.0
   random_password_generator: ^0.2.1
   wifi_iot: ^0.3.18+1
+  network_info_plus: ^4.0.2
+  webview_flutter: ^4.4.1
+  url_launcher: ^6.1.14
 
 dev_dependencies:
   flutter_test:

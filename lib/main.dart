@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testwificonnect/screen/connectwifi/connectwifi.dart';
 import 'package:testwificonnect/screen/generatepassword/generatepassword.dart';
+import 'package:testwificonnect/screen/routersetting/routersetting.dart';
 import 'package:testwificonnect/screen/signal%20strength/signalstrength.dart';
 import 'package:testwificonnect/screen/speedtest/speedtest.dart';
 import 'package:testwificonnect/screen/wifi_info/wifiInfo.dart';
@@ -65,6 +66,14 @@ class _MyAppState extends State<MyApp> {
                                       WifiInfo.providers()),
                             ),
                         child: const Text("Wifi info")),
+                    ElevatedButton(
+                        onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      RouterSetting.provider()),
+                            ),
+                        child: const Text("Router settings")),
                   ],
                 );
               }),
