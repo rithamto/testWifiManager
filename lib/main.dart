@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testwificonnect/screen/connectwifi/connectwifi.dart';
+import 'package:testwificonnect/screen/generatepassword/generatepassword.dart';
 import 'package:testwificonnect/screen/speedtest/speedtest.dart';
 
 void main() => runApp(const MyApp());
@@ -38,6 +39,13 @@ class _MyAppState extends State<MyApp> {
                                   builder: (context) => SpeedTest.provider()),
                             ),
                         child: const Text("Speed test")),
+                    ElevatedButton(
+                        onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => GeneratePassword.provider()),
+                            ),
+                        child: const Text("Generate password")),
                   ],
                 );
               }),
