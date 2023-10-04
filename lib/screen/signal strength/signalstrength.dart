@@ -20,7 +20,9 @@ class _SignalStrengthState extends State<SignalStrength> {
   @override
   void initState() {
     super.initState();
-    context.read<ConnectWifiCubit>().startListeningToScanResults();
+    context.read<ConnectWifiCubit>()
+    ..scanModule()
+    ..startListeningToScanResults();
   }
 
   @override

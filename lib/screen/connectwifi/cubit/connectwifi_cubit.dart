@@ -14,16 +14,21 @@ class ConnectWifiCubit extends Cubit<ConnectWifiState> {
   ConnectWifiCubit()
       : super(const ConnectWifiState.initial(data: ConnectWifiStateData()));
 
-  Future<void> startListeningToScanResults() async {
+  void scanModule() async {
     final can = await WiFiScan.instance.canStartScan();
     if (can == CanStartScan.yes) {
-      WiFiScan.instance.startScan();
-      WiFiScan.instance.onScannedResultsAvailable.listen((result) => emit(
-          ConnectWifiState.initial(
-              data: state.data?.copyWith(accessPoints: result))));
+      Future.delayed(const Duration(seconds: 5), () {
+        WiFiScan.instance.startScan();
+      });
     } else {
       emit(ConnectWifiState.initial(
           data: state.data?.copyWith(accessPoints: [])));
     }
+  }
+
+  void startListeningToScanResults() async {
+    WiFiScan.instance.onScannedResultsAvailable.listen((result) => emit(
+        ConnectWifiState.initial(
+            data: state.data?.copyWith(accessPoints: result))));
   }
 }
