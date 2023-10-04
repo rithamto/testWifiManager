@@ -3,6 +3,7 @@ import 'package:testwificonnect/screen/connectwifi/connectwifi.dart';
 import 'package:testwificonnect/screen/generatepassword/generatepassword.dart';
 import 'package:testwificonnect/screen/signal%20strength/signalstrength.dart';
 import 'package:testwificonnect/screen/speedtest/speedtest.dart';
+import 'package:testwificonnect/screen/wifi_info/wifiInfo.dart';
 
 void main() => runApp(const MyApp());
 
@@ -56,6 +57,14 @@ class _MyAppState extends State<MyApp> {
                                       SignalStrength.provider()),
                             ),
                         child: const Text("Signal Strength")),
+                    ElevatedButton(
+                        onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      WifiInfo.providers()),
+                            ),
+                        child: const Text("Wifi info")),
                   ],
                 );
               }),

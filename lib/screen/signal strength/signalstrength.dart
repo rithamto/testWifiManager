@@ -13,10 +13,10 @@ class SignalStrength extends StatefulWidget {
   }
 
   @override
-  State<SignalStrength> createState() => _ConnectWifiState();
+  State<SignalStrength> createState() => _SignalStrengthState();
 }
 
-class _ConnectWifiState extends State<SignalStrength> {
+class _SignalStrengthState extends State<SignalStrength> {
   @override
   void initState() {
     super.initState();

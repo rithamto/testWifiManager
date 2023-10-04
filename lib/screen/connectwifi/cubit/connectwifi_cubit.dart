@@ -17,6 +17,7 @@ class ConnectWifiCubit extends Cubit<ConnectWifiState> {
   Future<void> startListeningToScanResults() async {
     final can = await WiFiScan.instance.canStartScan();
     if (can == CanStartScan.yes) {
+      WiFiScan.instance.startScan();
       WiFiScan.instance.onScannedResultsAvailable.listen((result) => emit(
           ConnectWifiState.initial(
               data: state.data?.copyWith(accessPoints: result))));
