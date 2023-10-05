@@ -49,6 +49,8 @@ dependencies:
   url_launcher: ^6.1.14
   flutter_inappwebview: ^5.8.0
   after_layout: ^1.2.0
+  wifi_info_flutter: ^2.0.2
+  lan_scanner: ^4.0.0+1
 
 dev_dependencies:
   flutter_test:

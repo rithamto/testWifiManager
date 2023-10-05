@@ -43,14 +43,16 @@ class WifiInfoCubit extends Cubit<WifiInfoState> {
     WiFiScan.instance.onScannedResultsAvailable.listen((event) {
       for (var i in event) {
         if (i.ssid == state.data!.ssid) {
-          emit(WifiInfoState.initial(data: state.data?.copyWith(channelwidth: convertChannelWidth(i.channelWidth))));
+          emit(WifiInfoState.initial(
+              data: state.data?.copyWith(
+                  channelwidth: convertChannelWidth(i.channelWidth))));
         }
       }
     });
   }
 
-  String convertStatus(var data){
-    switch (data){
+  String convertStatus(var data) {
+    switch (data) {
       case 0:
         return "Disabling";
       case 1:
@@ -65,8 +67,8 @@ class WifiInfoCubit extends Cubit<WifiInfoState> {
     return '?';
   }
 
-  String convertChannelWidth(var data){
-    switch (data){
+  String convertChannelWidth(var data) {
+    switch (data) {
       case WiFiChannelWidth.unkown:
         return "?";
       case WiFiChannelWidth.mhz20:

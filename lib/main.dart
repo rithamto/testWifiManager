@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testwificonnect/screen/connecteddevices/connecteddevices.dart';
 import 'package:testwificonnect/screen/connectwifi/connectwifi.dart';
 import 'package:testwificonnect/screen/generatepassword/generatepassword.dart';
 import 'package:testwificonnect/screen/routersetting/routersetting.dart';
@@ -21,6 +22,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: const Text('Wifi manager Demo'),
@@ -76,6 +78,14 @@ class _MyAppState extends State<MyApp> {
                                       RouterSetting.provider()),
                             ),
                         child: const Text("Router settings")),
+                    ElevatedButton(
+                        onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ConnectedDevices.provider()),
+                            ),
+                        child: const Text("Connected devices")),
                   ],
                 );
               }),
