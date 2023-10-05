@@ -21,7 +21,7 @@ class _SignalStrengthState extends State<SignalStrength> {
   void initState() {
     super.initState();
     context.read<ConnectWifiCubit>()
-    ..scanModule()
+    ..startScan()
     ..startListeningToScanResults();
   }
 
@@ -32,6 +32,12 @@ class _SignalStrengthState extends State<SignalStrength> {
         body: SingleChildScrollView(
           child: Column(
             children: [
+              ElevatedButton(
+                onPressed: (){
+                  context.read<ConnectWifiCubit>().startScan();
+                }, 
+                child: const Text("scan")
+              ),
               SizedBox(
                 height: 2000,
                 width: 500,

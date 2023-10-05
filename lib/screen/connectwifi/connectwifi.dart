@@ -22,8 +22,8 @@ class _ConnectWifiState extends State<ConnectWifi> {
   void initState() {
     super.initState();
     context.read<ConnectWifiCubit>()
-    ..scanModule()
-    ..startListeningToScanResults();
+      ..startScan()
+      ..startListeningToScanResults();
   }
 
   @override
@@ -33,6 +33,11 @@ class _ConnectWifiState extends State<ConnectWifi> {
         body: SingleChildScrollView(
           child: Column(
             children: [
+              ElevatedButton(
+                  onPressed: () {
+                    context.read<ConnectWifiCubit>().startScan();
+                  },
+                  child: const Text("scan")),
               SizedBox(
                 height: 2000,
                 width: 500,

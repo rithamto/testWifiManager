@@ -6,7 +6,9 @@ import 'package:testwificonnect/screen/signal%20strength/signalstrength.dart';
 import 'package:testwificonnect/screen/speedtest/speedtest.dart';
 import 'package:testwificonnect/screen/wifi_info/wifiInfo.dart';
 
-void main() => runApp(const MyApp());
+void main(){
+  runApp(const MyApp());
+} 
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});

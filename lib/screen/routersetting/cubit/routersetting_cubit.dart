@@ -15,7 +15,11 @@ class RouterSettingCubit extends Cubit<RouterSettingState> {
       : super(const RouterSettingState.initial(data: RouterSettingStateData()));
 
   Future<void> getRouterIP() async {
-    final routerIP = await  NetworkInfo().getWifiGatewayIP();
-    emit(RouterSettingState.initial(data: state.data?.copyWith(routerIP: routerIP!)));
+    final routerIP = await NetworkInfo().getWifiGatewayIP();
+    routerIP == null
+        ? emit(RouterSettingState.initial(
+            data: state.data?.copyWith(routerIP: "")))
+        : emit(RouterSettingState.initial(
+            data: state.data?.copyWith(routerIP: "https://$routerIP")));
   }
 }

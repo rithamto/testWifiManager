@@ -1,7 +1,5 @@
 // ignore_for_file: depend_on_referenced_packages
 
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -14,12 +12,10 @@ class ConnectWifiCubit extends Cubit<ConnectWifiState> {
   ConnectWifiCubit()
       : super(const ConnectWifiState.initial(data: ConnectWifiStateData()));
 
-  void scanModule() async {
+  void startScan() async {
     final can = await WiFiScan.instance.canStartScan();
     if (can == CanStartScan.yes) {
-      Future.delayed(const Duration(seconds: 5), () {
-        WiFiScan.instance.startScan();
-      });
+      WiFiScan.instance.startScan();
     } else {
       emit(ConnectWifiState.initial(
           data: state.data?.copyWith(accessPoints: [])));
