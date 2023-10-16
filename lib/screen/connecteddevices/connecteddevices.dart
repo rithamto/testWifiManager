@@ -34,7 +34,6 @@ class _ConnectedDevicesState extends State<ConnectedDevices> {
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height,
-
                 child: BlocBuilder<ConnectedDevicesCubit, ConnectedDevicesState>(
                     builder: (context, state) {
                   final lstModule = state.data?.lstIP;

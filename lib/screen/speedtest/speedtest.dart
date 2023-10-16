@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testwificonnect/screen/speedtest/cubit/speedtest_cubit.dart';
 
-
 class SpeedTest extends StatefulWidget {
   const SpeedTest({super.key});
 
@@ -23,9 +22,7 @@ class _SpeedTestState extends State<SpeedTest> {
   @override
   void initState() {
     super.initState();
-    context.read<SpeedTestCubit>()
-    ..startPingTest()
-    ..startSpeedTest();
+    context.read<SpeedTestCubit>().startSpeedTest();
   }
 
   @override
@@ -40,13 +37,13 @@ class _SpeedTestState extends State<SpeedTest> {
                 width: 500,
                 child: BlocBuilder<SpeedTestCubit, SpeedTestState>(
                     builder: (context, state) {
-                  final upload = state.data?.upLoadSpeed;
-                  final dowload = state.data?.downLoadSpeed;
-                  final ping = state.data?.ping;
+                  final upload = state.data?.upLoadSpeed ?? 0;
+                  final dowload = state.data?.downLoadSpeed ?? 0;
+                  final ping = state.data?.ping ?? "";
                   return Column(
                     children: [
-                      Text(upload.toString()),
                       Text(dowload.toString()),
+                      Text(upload.toString()),
                       Text(ping.toString()),
                     ],
                   );
